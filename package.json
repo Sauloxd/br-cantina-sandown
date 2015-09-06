@@ -1,0 +1,27 @@
+{
+  "name": "br-cantina-sandown",
+  "version": "1.0.0",
+  "description": "Restaurante Cantina Sandown",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp-jade": "^1.1.0",
+    "gulp-stylus": "^2.0.6",
+    "gulp-uglify": "^1.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sauloxd/br-cantina-sandown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sauloxd/br-cantina-sandown/issues"
+  },
+  "homepage": "https://github.com/Sauloxd/br-cantina-sandown#readme"
+}
