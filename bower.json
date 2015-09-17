@@ -1,0 +1,23 @@
+{
+  "name": "br-cantina-sandown",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Sauloxd/br-cantina-sandown",
+  "authors": [
+    "Saulo Furuta <saulotoshi@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-mocks": "~1.4.5"
+  },
+  "devDependencies": {
+    "angular-ui-router": "~0.2.15"
+  }
+}
