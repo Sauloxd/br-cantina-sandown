@@ -1,10 +1,7 @@
-var gulp 	  = require('gulp');
-var uglify 	= require('gulp-uglify');
-var concat  = require('gulp-concat');
-var jade    = require('gulp-jade');
-var stylus  = require('gulp-stylus');
+var gulp = require('gulp');
+var gulpLoadPlugins = require('gulp-load-plugins');
+var plugins = gulpLoadPlugins();
 var browserSync = require('browser-sync').create();
-var ngAnnotate = require('gulp-ng-annotate');
 
 gulp.task('compile', function() {
     //get index.html
@@ -15,19 +12,19 @@ gulp.task('compile', function() {
     .pipe(gulp.dest('dist/js'));
      //compile JavaScripts
   gulp.src('src/assets/js/*.js')
-   .pipe(concat('all.min.js'))
-   .pipe(ngAnnotate())
-   .pipe(uglify())
+   .pipe(plugins.concat('all.min.js'))
+   .pipe(plugins.ngAnnotate())
+   .pipe(plugins.uglify())
    .pipe(gulp.dest('dist/js'))
    .pipe(browserSync.stream());
       //compile JADEs
   gulp.src('src/app/*.jade')
-    .pipe(jade())
+    .pipe(plugins.jade())
     .pipe(gulp.dest('dist/html'))
     .pipe(browserSync.stream());
 
   gulp.src('src/assets/css/index.styl')
-    .pipe(stylus())
+    .pipe(plugins.stylus())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 });
