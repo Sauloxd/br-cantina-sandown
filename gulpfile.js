@@ -27,6 +27,12 @@ gulp.task('compile', function() {
     .pipe(plugins.stylus())
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
+
+  gulp.src('src/assets/css/utilities/bootstrap.css')
+    .pipe(plugins.minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('dist/css'))
+    .pipe(browserSync.stream());
+
 });
 
 
@@ -46,7 +52,7 @@ gulp.task('serve', function(){
             baseDir: "./dist"
         }
     });
-    gulp.watch(['src/app/*.jade', 'src/assets/css/*.styl', 'src/assets/js/*.js'], ['compile']);
+    gulp.watch(['src/app/*.jade', 'src/assets/css/**/*.styl', 'src/assets/css/*.styl', 'src/assets/js/*.js'], ['compile']);
     gulp.watch("dist/**/*.html").on('change', browserSync.reload);
 
 });
