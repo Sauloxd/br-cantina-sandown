@@ -25,10 +25,6 @@ gulp.task('compile', function() {
 
   gulp.src('src/assets/css/index.styl')
     .pipe(plugins.stylus())
-    .pipe(gulp.dest('dist/css'))
-    .pipe(browserSync.stream());
-
-  gulp.src('src/assets/css/utilities/bootstrap.css')
     .pipe(plugins.minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
