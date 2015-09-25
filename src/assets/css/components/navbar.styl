@@ -1,0 +1,67 @@
+.navbar-container
+  display: table
+  width: 100%
+  height: 48px
+  background-color: gray
+  position: relative
+  top: 0
+  z-index: 1000
+
+.navbar-menu-toggle
+  display: none
+
+.navbar-menu-tg-container
+  display: block
+  height: 48px
+  width: 48px
+  background-color: gray
+  
+.navbar-menu-tg-icon-top, .navbar-menu-tg-icon-bot
+  position: absolute
+  left: 18px
+  transition: transform 0.5s ease-out
+  
+.navbar-menu-tg-icon-top:before, .navbar-menu-tg-icon-bot:after
+  display: inline-block
+  content: ''
+  width: 20px
+  height: 1px
+  border-radius: 3px
+  position: absolute
+  background-color: white
+  transition: transform 0.5s ease-out
+  
+.navbar-menu-tg-icon-top:before
+  top: 18px
+
+.navbar-menu-tg-icon-bot:after
+  top: 30px
+
+.navbar-menu-toggle:checked
+  + .navbar-menu-tg-container
+    .navbar-menu-tg-icon-top
+      transition: transform 0.5s ease-out
+      -ms-transform: translateY(6px); /* IE 9 */
+      -webkit-transform: translateY(6px); /* Chrome, Safari, Opera */
+      transform: translateY(6px);
+    .navbar-menu-tg-icon-bot
+      transition: transform 0.5s ease-out
+      -ms-transform: translateY(-6px); /* IE 9 */
+      -webkit-transform: translateY(-6px); /* Chrome, Safari, Opera */
+      transform: translateY(-6px);
+    .navbar-menu-tg-icon-top:before
+      transition: transform 0.5s ease-out
+      -ms-transform: rotate(45deg); /* IE 9 */
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+      transform: rotate(45deg);
+    .navbar-menu-tg-icon-bot:after
+      transition: transform 0.5s ease-out
+      -ms-transform: rotate(-45deg); /* IE 9 */
+      -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+      transform: rotate(-45deg);
+
+.navbar-logo
+  display: inline-block
+  text-align: center
+  height: 26px
+  weight: 26px
