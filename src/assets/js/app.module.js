@@ -16,6 +16,10 @@ console.log('entrou no js');
         url: "/projects",
         templateUrl: "html/projects.html"
       })
+      .state('contact', {
+        url: "/contact",
+        templateUrl: "html/contact.html"
+      })
       .state('about', {
         url: "/about",
         templateUrl: "html/about.html"
