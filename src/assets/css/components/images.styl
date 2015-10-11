@@ -7,5 +7,40 @@
   text-align: right
   font-size: 0 //- This is to prevent the akwards spaces inside the top block
   
+.img-neutral
+  height: 100vh
+  width: 100vw
+  background-color: black
+  font-size: 0 //- This is to prevent the akwards spaces inside the top block
+
+.img-project-item
+  width: 100%
+  position: relative
+  z-index: 0
+  
 .img--no-gutter
   width: 100%
+  
+.img-overlay
+  display: inline-block
+  position: relative
+  width: 100%
+
+.img-overlay-text
+  visibility: hidden
+  position: absolute
+  
+.img-overlay:active
+  .img-overlay-text
+    display: inline-block
+    width: 100%
+    height: 100%
+    visibility: initial
+    background-color: rgba(0, 0, 0, 0.4)
+    z-index: 1
+    margin: 0
+    padding: 36px 18px
+    text-align: center
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden

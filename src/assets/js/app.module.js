@@ -15,6 +15,11 @@ console.log('entrou no js');
        .state('projects', {
         url: "/projects",
         templateUrl: "html/projects.html"
-      });
+      })
+      .state('about', {
+        url: "/about",
+        templateUrl: "html/about.html"
+      })
+;
 
     });
