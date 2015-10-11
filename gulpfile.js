@@ -7,6 +7,12 @@ gulp.task('compile', function() {
     //get index.html
   gulp.src('src/app/index.html')
     .pipe(gulp.dest('dist'));
+  //get other resources
+  gulp.src('src/assets/fonts/**')
+    .pipe(gulp.dest('dist/resources'));
+  //get other resources
+  gulp.src('src/assets/images/**')
+    .pipe(gulp.dest('dist/resources'));
   //get angular-ui-router
   gulp.src('bower_components/angular-ui-router/release/angular-ui-router.js')
     .pipe(gulp.dest('dist/js'));
