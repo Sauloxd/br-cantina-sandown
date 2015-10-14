@@ -1,0 +1,10 @@
+.img-mask
+.img-fullscreen(style='background-image : url({{backgroundImg}})')
+  include ./../partials/navbar.jade
+  .text-container.pos-left
+    h1 
+      a.link.bold(ui-sref= "{{indexPage}}") {{name}}
+    p.body.light(ng-repeat = "detail in infoDetails") {{detail.paragraph}}
+
+    .pos-right
+      a.link.bold(ui-sref="{{gallery}}") See More

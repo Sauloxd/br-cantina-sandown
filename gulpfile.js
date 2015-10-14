@@ -3,7 +3,7 @@ var gulpLoadPlugins = require('gulp-load-plugins');
 var plugins = gulpLoadPlugins();
 var browserSync = require('browser-sync').create();
 
-gulp.task('compile', function() {
+gulp.task('compile', ['clean'], function() {
     //get index.html
   gulp.src('src/app/index.html')
     .pipe(gulp.dest('dist'));
@@ -29,12 +29,24 @@ gulp.task('compile', function() {
     .pipe(gulp.dest('dist/html'))
     .pipe(browserSync.stream());
 
+  gulp.src('src/app/**/*.jade')
+    .pipe(plugins.jade())
+    .pipe(gulp.dest('dist/html'))
+    .pipe(browserSync.stream());
+
   gulp.src('src/assets/css/index.styl')
     .pipe(plugins.stylus())
     .pipe(plugins.minifyCss({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css'))
     .pipe(browserSync.stream());
 
+});
+
+//clean the dist to avoid overlapping when compiling
+
+gulp.task('clean', function () {
+    return gulp.src('dist', {read: false})
+        .pipe(plugins.clean());
 });
 
 
@@ -47,14 +59,14 @@ gulp.task('compile', function() {
 
 gulp.task('serve', function(){
   gulp.watch('src/assets/js/*.js', ['compile']);
-  gulp.watch('src/app/*.jade', ['compile']);
+  gulp.watch('src/app/**/*.jade', ['compile']);
 
     browserSync.init({
         server: {
             baseDir: "./dist"
         }
     });
-    gulp.watch(['src/app/*.jade', 'src/assets/css/**/*.styl', 'src/assets/css/*.styl', 'src/assets/js/*.js'], ['compile']);
+    gulp.watch(['src/app/**/*.jade', 'src/assets/css/**/*.styl', 'src/assets/css/*.styl', 'src/assets/js/*.js'], ['compile']);
     gulp.watch("dist/**/*.html").on('change', browserSync.reload);
 
 });
