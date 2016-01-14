@@ -1,0 +1,10 @@
+.img-fullscreen
+  include ./../partials/navbar.jade
+  .img-header
+    a.body.light.largest.img-overlay-title(ui-sref="{{indexPage}}") {{name}}
+    //- img.img-project-item(src="/patricia-hokama/resources/mn/prj-mooca-head.png")
+    img.img-project-item(src="{{headImage}}")
+  .img-overlay(ng-repeat = "img in images")
+    p.body.light.largest.img-overlay-text {{img.description}}
+    //- img.img-project-item(src="/patricia-hokama/resources/mn/prj-mooca-1.png")
+    img.img-project-item(src="{{img.path}}")

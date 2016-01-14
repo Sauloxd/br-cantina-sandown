@@ -1,0 +1,67 @@
+$navbar-height = 48px
+.img-fullscreen
+  height: 100vh
+  width: 100vw
+  background-image: url("../resources/home-bkg.png")
+  background-repeat: no-repeat
+  background-size: cover;
+  text-align: right
+  font-size: 0 //- This is to prevent the akwards spaces inside the top block
+  position: relative
+
+.img-mask
+  margin-top: $navbar-height
+  height: 100vh
+  width: 100vw
+  position: absolute
+  background-color: rgba(0, 0, 0, 0.5)
+  font-size: 0 //- This is to prevent the akwards spaces inside the top block
+  z-index: 1
+
+.img-neutral
+  height: 100vh
+  width: 100vw
+  background-color: black
+  font-size: 0 //- This is to prevent the akwards spaces inside the top block
+
+.img-project-item
+  width: 100%
+  position: relative
+  z-index: 0
+  
+.img--no-gutter
+  width: 100%
+  
+.img-overlay, .img-header
+  display: inline-block
+  position: relative
+  width: 100%
+
+.img-overlay-text
+  visibility: hidden
+  position: absolute
+  
+.img-overlay:active
+  .img-overlay-text
+    display: inline-block
+    width: 100%
+    height: 100%
+    visibility: initial
+    background-color: rgba(0, 0, 0, 0.4)
+    z-index: 1
+    margin: 0
+    padding: 36px 18px
+    text-align: center
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+    
+.img-overlay-title
+    width: 100%
+    height: 100%
+    position: absolute
+    background-color: rgba(0, 0, 0, 0.4)
+    z-index: 1
+    margin: 0
+    padding: 48px 18px
+    text-align: center

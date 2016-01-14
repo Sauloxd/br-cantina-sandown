@@ -1,0 +1,96 @@
+$ic-menu-translate = 4px
+$navbar-height = 48px
+$margin-medium = 18px
+
+.navbar-container
+  width: 100%
+  height: $navbar-height
+  background-color: rgba(0, 0, 0, 0.6)
+  text-align: right
+  top: 0
+  
+.navgation-title-container
+  display: block
+  text-align: left
+  margin: 24px 24px 0 0
+
+.navbar-menu-toggle
+  display: none
+
+.navbar-logo
+  display: inline
+  font: 20px AndaleMono
+  color: rgba(255, 255, 255, 1)
+  height: $navbar-height;
+  line-height: $navbar-height + 2
+  margin-right: $margin-medium
+
+.navbar-menu-tg-container
+  display: block
+  height: $navbar-height
+  width: $navbar-height
+  position: absolute
+  z-index: 100
+  
+.navbar-menu-tg-icon-top, .navbar-menu-tg-icon-bot
+  position: absolute
+  z-index: 4
+  left: 18px
+  transition: transform 0.5s ease-out
+  
+.navbar-menu-tg-icon-top:before, .navbar-menu-tg-icon-bot:after
+  display: inline-block
+  content: ''
+  width: 20px
+  height: 1px
+  border-radius: 3px
+  position: absolute
+  background-color: white
+  transition: transform 0.5s ease-out
+  
+.navbar-menu-tg-icon-top:before
+  top: 20px
+
+.navbar-menu-tg-icon-bot:after
+  top: 28px
+
+.navbar-menu-container
+  width: 100%
+  height: 100%
+  position: absolute
+  bottom: 100%
+  z-index: 50
+  background-color: black
+  transition bottom 2s
+
+.navbar-menu-toggle:checked
+  ~ .navbar-menu-container
+    bottom: 0
+    transition bottom 2s
+  + .navbar-menu-tg-container
+    .navbar-menu-tg-icon-top
+      transition: transform 0.5s ease-out
+      -ms-transform: translateY($ic-menu-translate); /* IE 9 */
+      -webkit-transform: translateY($ic-menu-translate); /* Chrome, Safari, Opera */
+      transform: translateY($ic-menu-translate);
+    .navbar-menu-tg-icon-bot
+      transition: transform 0.5s ease-out
+      -ms-transform: translateY(-1 * $ic-menu-translate); /* IE 9 */
+      -webkit-transform: translateY(-1 * $ic-menu-translate); /* Chrome, Safari, Opera */
+      transform: translateY(-1 * $ic-menu-translate);
+    .navbar-menu-tg-icon-top:before
+      transition: transform 0.5s ease-out
+      -ms-transform: rotate(45deg); /* IE 9 */
+      -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+      transform: rotate(45deg);
+    .navbar-menu-tg-icon-bot:after
+      transition: transform 0.5s ease-out
+      -ms-transform: rotate(-45deg); /* IE 9 */
+      -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+      transform: rotate(-45deg);
+
+
+
+
+
+

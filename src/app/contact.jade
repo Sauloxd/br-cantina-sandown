@@ -1,0 +1,11 @@
+.img-fullscreen
+  include ./partials/navbar.jade
+  .text-container.pos-left
+    h1 Contact
+
+    form(action="MAILTO:saulotoshi@gmail.com" method="post" enctype="text/plain")
+      input.body.light(type="text" name="name" placeholder="Nome")
+      input.body.light(type="text" name="mail" placeholder="Email")
+      textarea.body.light(type="text" name="comment" placeholder="Comentários" size="50")
+      input.body.light(type="submit" value="Send")
+      input.body.light(type="reset" value="Reset")
